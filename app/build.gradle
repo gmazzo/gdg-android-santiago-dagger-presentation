@@ -3,15 +3,25 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
 
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
     defaultConfig {
         minSdkVersion 14
     }
 }
 
 dependencies {
-    annotationProcessor "com.google.dagger:dagger-android-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 
+    implementation project(':data')
     implementation "com.android.support:appcompat-v7:$appCompatVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.android.support:design:$appCompatVersion"
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
 }

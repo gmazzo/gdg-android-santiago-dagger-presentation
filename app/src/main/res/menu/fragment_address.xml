@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/json"
+        android:title="JSON"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/xml"
+        android:title="XML"
+        app:showAsAction="ifRoom" />
+
+</menu>

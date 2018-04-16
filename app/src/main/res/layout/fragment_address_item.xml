@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/latitude"
+        tools:text="Some address" />
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/longitude"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="-33.4141996197085" />
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        app:layout_constraintStart_toEndOf="@id/latitude"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="-70.60425221970848"
+        android:layout_marginStart="@dimen/margin" />
+
+</android.support.constraint.ConstraintLayout>

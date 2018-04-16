@@ -8,7 +8,7 @@ import dagger.Provides;
 import dagger.Reusable;
 import retrofit2.Retrofit;
 
-@Module(includes = DataModule.Bindings.class)
+@Module(includes = {DataModule.Bindings.class, RetrofitModule.class})
 public class DataModule {
 
     @JSON
@@ -26,7 +26,7 @@ public class DataModule {
     }
 
     @Module
-    interface Bindings {
+    public interface Bindings {
 
         @Binds
         GeocodeRepository bindRepository(@JSON GeocodeRepository impl);

@@ -7,16 +7,17 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.jaxb.JaxbConverterFactory;
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
-@Module
+@Module(includes = OkHttpModule.class)
 public class RetrofitModule {
 
     @Provides
     Retrofit.Builder provideClientBuilder(OkHttpClient client) {
         return new Retrofit.Builder()
                 .client(client)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync());
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync())
+                .baseUrl("https://maps.googleapis.com/maps/api/");
     }
 
     @JSON
@@ -33,7 +34,7 @@ public class RetrofitModule {
     @Reusable
     Retrofit provideXMLRetrofit(Retrofit.Builder builder) {
         return builder
-                .addConverterFactory(JaxbConverterFactory.create())
+                .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build();
     }
 

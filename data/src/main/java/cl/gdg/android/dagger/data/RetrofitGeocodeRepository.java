@@ -26,8 +26,8 @@ public class RetrofitGeocodeRepository implements GeocodeRepository {
 
     private Address convertToAddress(GeocodeAPI.ResultItem item) {
         return new Address(
-                item.place_id,
-                item.formatted_address,
+                item.placeId,
+                item.address,
                 item.geometry.location.lat,
                 item.geometry.location.lng);
     }
