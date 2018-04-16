@@ -34,7 +34,7 @@ public class RetrofitModule {
     @Reusable
     Retrofit provideXMLRetrofit(Retrofit.Builder builder) {
         return builder
-                .addConverterFactory(SimpleXmlConverterFactory.create())
+                .addConverterFactory(SimpleXmlConverterFactory.createNonStrict())
                 .build();
     }
 

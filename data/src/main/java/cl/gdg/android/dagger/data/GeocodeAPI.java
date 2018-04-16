@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import io.reactivex.Single;
@@ -22,7 +22,7 @@ interface GeocodeAPI {
 
         @SerializedName("results")
         @ElementList(inline = true, entry = "result", type = ResultItem.class)
-        List<ResultItem> results = Collections.emptyList();
+        List<ResultItem> results = new LinkedList<>();
 
         @SerializedName("status")
         @Element(name = "status")
